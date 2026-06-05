@@ -1,0 +1,8 @@
+# Binaries & installers — store separately, not in repo
+*.exe
+*.zip
+google-cloud-cli-windows-x86_64/
+google-workspace-cli-x86_64-pc-windows-msvc/
+
+# Editor
+.vscode/
