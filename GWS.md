@@ -74,6 +74,15 @@ C:\Users\ipivi\.config\gws\credentials.enc      ← encrypted token (written aft
 C:\Users\ipivi\.config\gws\token_cache.json     ← access token cache
 ```
 
+### Transferring credentials to a new machine
+
+A zip of the `.config\gws\` folder (AES256 encrypted) is stored in Google Drive:
+
+- **File:** `gws-config.zip` (Drive ID: `1aDbYKE83FsarYnrS2HLxQs09HhtiqOLu`)
+- **Password hint:** chumG
+- Download from Drive, extract, and place the contents into `C:\Users\<you>\.config\gws\`
+- Then run `gws auth login` to bind the credentials to the new machine's keyring
+
 ---
 
 ## 4. Configure Claude Code Plugin
