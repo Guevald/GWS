@@ -14,6 +14,10 @@ A reference of cleanup patterns and rules to apply consistently across email acc
 | Uber_Deliveroo | `@uber.com`, `@deliveroo.co.uk`, `@deliveroo.com` | ✓ | Rides + food delivery |
 | Substack | `@substack.com` senders (per newsletter) | ✓ | See individual senders below |
 | Absolut | `queenspark@absolute-studios.co.uk`, `kensal@absolute-studios.co.uk`, `momence@mail.momence.com` | ✓ | Gym/studio — two branches + booking platform |
+| Subscriptions | KAYAK, The Deep View, FT Market Alert (see Finance Alerts), Greg Langstaff, Giles Thurston, Shortform | ✓ | General newsletters/promotions |
+| Bank Updates | `hsbcuk@mail01.hsbc.co.uk`, `noreply@investdirect.hsbc.co.uk`, `barclaycard@emails.barclaycard.co.uk` | ✓ | Bank emails only — not in Subscriptions |
+| Finance Alerts | `marketalerts@alertshub.ft.com` | ✓ | FT market/watchlist alerts |
+| Frive | `hello@frive.co.uk` | ✗ | Stays in inbox — delivery/order updates expected; purge non-welcome emails >1 month old |
 
 #### Substack newsletters routed individually
 | Newsletter | Sender |
@@ -34,6 +38,7 @@ Applied to labels where emails accumulate but only receipts/confirmations have l
 |-------|---------------------------|--------|---------|
 | Uber_Deliveroo | receipt, order, confirmation, invoice, trip | Everything else older than 2 weeks | One-off (done 2026-06-05) |
 | Absolut | confirmation, booking, receipt, invoice | Everything else older than 2 weeks | Weekly Monday (pending automation) |
+| Frive (inbox) | welcome email, delivery/order updates | Everything else older than 1 month | One-off (done 2026-06-05) |
 
 ### General deletion principle
 > Keep anything that is a **receipt, booking confirmation, invoice, or account notification**. Delete everything else (promotions, newsletters, marketing) beyond the retention window.
