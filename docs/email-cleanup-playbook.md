@@ -38,6 +38,7 @@ A reference of cleanup patterns and rules to apply consistently across email acc
 | Sharegate | `content@sharegate.com` |
 | Love the Sales | `Hello@lovethesales.com` |
 | Simply Wall St | `no-reply@p.simplywall.st` |
+| Samsung | `no-reply@m1.email.samsung.com` |
 
 ---
 
