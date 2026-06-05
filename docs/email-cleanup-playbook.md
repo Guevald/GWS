@@ -13,7 +13,7 @@ A reference of cleanup patterns and rules to apply consistently across email acc
 | LinkedIn | `@linkedin.com` | ✓ | All LinkedIn emails |
 | Uber_Deliveroo | `@uber.com`, `@deliveroo.co.uk`, `@deliveroo.com` | ✓ | Rides + food delivery |
 | Substack | `@substack.com` senders (per newsletter) | ✓ | See individual senders below |
-| Absolut | `queenspark@absolute-studios.co.uk` | ✓ | Gym/studio newsletters |
+| Absolut | `queenspark@absolute-studios.co.uk`, `kensal@absolute-studios.co.uk`, `momence@mail.momence.com` | ✓ | Gym/studio — two branches + booking platform |
 
 #### Substack newsletters routed individually
 | Newsletter | Sender |
