@@ -134,6 +134,15 @@ Or ask Claude Code directly:
 
 ---
 
+## Google Keep
+
+The Keep API (`https://www.googleapis.com/auth/keep`) is restricted to verified/enterprise apps — it cannot be used with a personal OAuth setup. Two alternatives to explore later:
+
+1. **Google Takeout export** — go to takeout.google.com, select Keep only, export. You get a zip of `.html` files (one per note) plus a JSON index. Easy to parse into Excel or SQL Server with Python or SSIS.
+2. **Third-party connectors** — IFTTT and Make (Integromat) have pre-verified Keep integrations if automation is needed.
+
+---
+
 ## References
 - gws CLI releases: https://github.com/googleworkspace/cli/releases
 - gws Claude plugin: https://github.com/WadeWarren/gws-claude-plugin
