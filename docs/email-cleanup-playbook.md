@@ -38,7 +38,7 @@ Applied to labels where emails accumulate but only receipts/confirmations have l
 |-------|---------------------------|--------|---------|
 | Uber_Deliveroo | receipt, order, confirmation, invoice, trip | Everything else older than 2 weeks | One-off (done 2026-06-05) |
 | Absolut | confirmation, booking, receipt, invoice | Everything else older than 2 weeks | Weekly Monday (pending automation) |
-| Frive (inbox) | welcome email, delivery/order updates | Everything else older than 1 month | One-off (done 2026-06-05) |
+| Frive (inbox) | welcome email, delivery/order updates | Everything else older than 1 month | Monthly 1st (Task Scheduler: GWS-FriveCleanup) |
 
 ### General deletion principle
 > Keep anything that is a **receipt, booking confirmation, invoice, or account notification**. Delete everything else (promotions, newsletters, marketing) beyond the retention window.
