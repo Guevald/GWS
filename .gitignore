@@ -1,3 +1,6 @@
+# Credentials — transfer manually, never commit
+gws-config.zip
+
 # Binaries & installers — store separately, not in repo
 *.exe
 *.zip
