@@ -69,19 +69,30 @@ gws auth login    # opens browser — sign in and allow access
 
 ### Credentials location (Windows)
 ```
-C:\Users\ipivi\.config\gws\client_secret.json   ← OAuth client
-C:\Users\ipivi\.config\gws\credentials.enc      ← encrypted token (written after login)
-C:\Users\ipivi\.config\gws\token_cache.json     ← access token cache
+$env:USERPROFILE\.config\gws\client_secret.json   ← OAuth client
+$env:USERPROFILE\.config\gws\credentials.enc      ← encrypted token (written after login)
+$env:USERPROFILE\.config\gws\token_cache.json     ← access token cache
 ```
 
 ### Transferring credentials to a new machine
 
-A zip of the `.config\gws\` folder (AES256 encrypted) is stored in Google Drive:
+The `client_secret.json` is the only file you need to copy — `credentials.enc` and the token cache are regenerated after login.
 
-- **File:** `gws-config.zip` (Drive ID: `1aDbYKE83FsarYnrS2HLxQs09HhtiqOLu`)
-- **Password hint:** chumG
-- Download from Drive, extract, and place the contents into `C:\Users\<you>\.config\gws\`
-- Then run `gws auth login` to bind the credentials to the new machine's keyring
+**Option A — copy from an existing machine:**
+```powershell
+# On the source machine, find the file at:
+#   $env:USERPROFILE\.config\gws\client_secret.json
+# Copy it to the same path on the new machine, then:
+gws auth login
+```
+
+**Option B — re-download from GCP Console (always works):**
+1. Go to [console.cloud.google.com](https://console.cloud.google.com) → APIs & Services → Credentials
+2. Find the OAuth 2.0 client (`project-f3d4caa3-847d-4d5a-999`) → click the download ↓ icon
+3. Save to `$env:USERPROFILE\.config\gws\client_secret.json`
+4. Run `gws auth login`
+
+> **Machines set up:** laptop (primary), desktop (WINDOWS11) — both authenticated as igal.pivin@gmail.com
 
 ---
 

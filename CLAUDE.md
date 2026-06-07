@@ -18,8 +18,9 @@ See GWS.md for the full step-by-step guide.
 
 Short version:
 1. Extract zip, add binary folder to PATH
-2. Install gcloud CLI (needed for `gws auth setup`)
-3. Run `gws auth setup` — creates GCP project + OAuth credentials automatically
+2. Copy `client_secret.json` from an existing machine or re-download from GCP Console
+   (skip `gws auth setup` — the GCP project already exists)
+3. Place at `$env:USERPROFILE\.config\gws\client_secret.json`
 4. Run `gws auth login` — authenticates with your Google account
 
 ## Claude Code Plugin
@@ -45,8 +46,8 @@ gws keep +list        # list Keep notes
 ```
 
 ## Credentials Location (Windows)
-- OAuth client:  `C:\Users\<user>\.config\gws\client_secret.json`
-- Auth token:    `C:\Users\<user>\.config\gws\` (written after gws auth login)
+- OAuth client:  `$env:USERPROFILE\.config\gws\client_secret.json`
+- Auth token:    `$env:USERPROFILE\.config\gws\` (written after gws auth login)
 
 ## GitHub Repository
 https://github.com/Guevald/GWS
