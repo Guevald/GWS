@@ -1,0 +1,31 @@
+{
+  "folders": [
+    {
+      "name": "GWS",
+      "path": "."
+    },
+    {
+      "name": "claude-config",
+      "path": "../.claude/claude-config"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/*.exe": true,
+      "**/*.zip": true,
+      "**/google-cloud-cli-windows-x86_64": true,
+      "**/google-workspace-cli-x86_64-pc-windows-msvc": true
+    },
+    "search.exclude": {
+      "**/*.exe": true,
+      "**/*.zip": true
+    },
+    "editor.rulers": [100],
+    "terminal.integrated.defaultProfile.windows": "PowerShell"
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-vscode.powershell"
+    ]
+  }
+}

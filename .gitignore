@@ -9,3 +9,6 @@ google-workspace-cli-x86_64-pc-windows-msvc/
 
 # Editor
 .vscode/
+
+# Setup state (machine-local)
+.setup_state.json

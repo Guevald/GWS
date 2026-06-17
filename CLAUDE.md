@@ -1,53 +1,59 @@
 # GWS — Google Workspace CLI for Claude Code
 
 ## What This Project Is
-Google Workspace integration for Claude Code using the `gws` CLI (googleworkspace/cli).
-The `gws` plugin provides 90+ skills covering Gmail, Calendar, Keep, Drive, Docs, Sheets, Chat, Forms, Tasks, Meet, and more.
+Personal config, docs, and scripts repo for using the `gws` CLI (googleworkspace/cli) with Claude Code.
+The `gws@gws-marketplace` plugin gives Claude Code 90+ skills covering Gmail, Calendar, Drive, Docs,
+Sheets, Keep, Chat, Forms, Tasks, Meet, and more.
 
 ## Project Structure
 ```
 GWS\
-  google-workspace-cli-x86_64-pc-windows-msvc\   — gws CLI binary (Windows x86_64)
-  google-workspace-cli-x86_64-pc-windows-msvc.zip — original zip for laptop setup
-  CLAUDE.md                                       — this file
-  GWS.md                                          — full setup & OAuth guide
+  gws.exe                         — pre-built Windows x86_64 binary (gitignored)
+  GWS.md                          — full first-time setup & OAuth guide
+  README.md                       — official upstream gws CLI reference docs
+  CLAUDE.md                       — this file
+  docs\
+    email-cleanup-playbook.md     — Gmail label/filter/deletion ruleset
+    sessions\                     — dated session logs
+    tips\
+      gws-gmail.md                — PowerShell command reference for Gmail ops
+      remote-agents.md            — Cloud Remote Agent architecture notes
+  setup.ps1                       — verify gws/gcloud binaries, show auth instructions; state-tracked one-time reminder
+  scripts\
+    cleanup-frive.ps1             — monthly: trash old Frive promo emails (Task Scheduler)
 ```
 
-## Setup (first time on a new machine)
-See GWS.md for the full step-by-step guide.
-
-Short version:
-1. Extract zip, add binary folder to PATH
-2. Copy `client_secret.json` from an existing machine or re-download from GCP Console
-   (skip `gws auth setup` — the GCP project already exists)
-3. Place at `$env:USERPROFILE\.config\gws\client_secret.json`
-4. Run `gws auth login` — authenticates with your Google account
-
 ## Claude Code Plugin
-The `gws@gws-marketplace` plugin is configured in `~/.claude/settings.json`:
+Configured in `~/.claude/settings.json`:
 ```json
 "extraKnownMarketplaces": {
-  "gws-marketplace": {
-    "source": { "source": "github", "repo": "WadeWarren/gws-claude-plugin" }
-  }
+  "gws-marketplace": { "source": { "source": "github", "repo": "WadeWarren/gws-claude-plugin" } }
 },
-"enabledPlugins": {
-  "gws@gws-marketplace": true
-}
+"enabledPlugins": { "gws@gws-marketplace": true }
 ```
 
 ## Key Commands
 ```powershell
-gws auth setup        # first-time GCP + OAuth setup (requires gcloud)
 gws auth login        # authenticate / re-authenticate
-gws gmail +triage     # show unread inbox
+gws gmail +triage     # show unread inbox summary
 gws calendar +agenda  # show upcoming events
-gws keep +list        # list Keep notes
+gws keep +list        # list Keep notes (limited — Keep API restricted to verified apps)
 ```
 
-## Credentials Location (Windows)
-- OAuth client:  `$env:USERPROFILE\.config\gws\client_secret.json`
-- Auth token:    `$env:USERPROFILE\.config\gws\` (written after gws auth login)
+## Credentials (Windows — never commit)
+- `$env:USERPROFILE\.config\gws\client_secret.json`  — OAuth client (copy from existing machine or GCP Console)
+- `$env:USERPROFILE\.config\gws\credentials.enc`     — encrypted refresh token (written after `gws auth login`)
+- `$env:USERPROFILE\.config\gws\token_cache.json`    — cached access token (delete to force refresh)
+- Portable backup: `gws-config.zip` (AES256-encrypted, stored in Google Drive)
 
-## GitHub Repository
-https://github.com/Guevald/GWS
+## First-Time Setup
+Run `.\setup.ps1` — verifies binaries, shows auth steps (one-time reminder suppressed after first run).
+
+Short version:
+1. Extract zip, add binary folder to PATH
+2. Copy `client_secret.json` from an existing machine (or re-download from GCP Console —
+   skip `gws auth setup`, the GCP project already exists)
+3. Place at `$env:USERPROFILE\.config\gws\client_secret.json`
+4. Run `gws auth login` to authenticate
+
+Full details in `GWS.md`.

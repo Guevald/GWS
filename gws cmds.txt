@@ -1,0 +1,4 @@
+gws auth login           # Authenticate
+gws gmail +triage        # show unread inbox
+gws calendar +agenda     # show upcoming events
+gws keep +list           # list Keep notes

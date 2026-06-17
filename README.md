@@ -1,3 +1,7 @@
+> **Project alignment:** Follows the [`keep`](../keep) workspace and documentation conventions (workspace file, CLAUDE.md structure, README split). Run `.\setup.ps1` to verify CLI binaries and see auth instructions.
+
+---
+
 <h1 align="center">gws</h1>
 
 **One CLI for all of Google Workspace — built for humans and AI agents.**<br>
